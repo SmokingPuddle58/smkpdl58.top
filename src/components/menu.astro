@@ -1,0 +1,49 @@
+---
+
+---
+<style>
+    .fixed-div {
+        position: fixed; /* Fixes the div in place */
+        top: 0; /* Aligns it to the top */
+        right: 0; /* Aligns it to the right */
+        padding: 10px; /* Optional padding */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        gap: 10px; /* Adds space between items */
+    }
+
+    .menu-item {
+        text-decoration: none; /* Removes underline from links */
+        color: black; /* Text color */
+        padding: 5px; /* Padding for each item */
+        transition: background-color 0.3s; /* Smooth background change */
+        font-size: large;
+        text-align: right;
+    }
+
+    .selected {
+        font-size: xx-large;
+        background-color: lightgray; /* Change background on hover */
+        transition: background-color 0.3s;
+    }
+
+    .number {
+        font-size: xxx-large; /* Makes the number larger */
+        font-weight: bolder; /* Makes the number bold */
+        margin-bottom: 2vw; /* Adds space below the number */
+        text-align: right;
+    }
+
+    @media (max-width: 800px) {
+
+    }
+</style>
+
+<div class="fixed-div">
+    <a href="#" class="menu-item selected">Home</a>
+    <a href="#" class="menu-item ">About</a>
+    <a href="#" class="menu-item ">Project</a>
+    <a href="#" class="menu-item ">Blogs</a>
+    <a href="#" class="menu-item ">Find Me!</a>
+    <a href="#" class="menu-item ">中 / En</a>
+</div>
