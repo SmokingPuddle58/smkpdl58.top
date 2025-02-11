@@ -1,10 +1,12 @@
 ---
 // 5 Colors for the background, from lightest to darkest.
 const bgSelection = ['#e0e1dd', '#778da9', '#415a77', '#1b263b', '#0d1b2a'];
-let selectedIndex = bgSelection[1];
+let selectedIndex = bgSelection[0];
+
 
 import Menu from '../components/menu.astro';
-import BArrow from '../components/arrow_bouncing.astro';
+import ArrowBouncing from '../components/arrowBouncing.astro';
+import AvatarMain from '../components/avatarMain.astro'
 ---
 
 <!----
@@ -13,7 +15,7 @@ openmoji.org
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style define:vars={{selectedIndex}}>
         body {
@@ -28,37 +30,6 @@ openmoji.org
             font-display: swap;
         }
 
-        @font-face {
-            font-family: 'Huiwen';
-            src: url('/fonts/Huiwen.woff2') format('woff');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        .top-center-div {
-            position: fixed; /* Fixes the div in place */
-            top: 20px; /* Space from the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for the width of the div */
-            background-color: lightyellow; /* Background color */
-            padding: 10px 20px; /* Padding for the div */
-            border-radius: 30px; /* Rounded corners */
-            border: 2px solid orange; /* Optional border */
-            text-align: center; /* Center the text */
-            font-size: 16px; /* Font size */
-        }
-
-        .bottom-center-div {
-            position: fixed; /* Fixes the div in place */
-            bottom: 10px; /* Space from the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for the width of the div */
-            padding: 10px 20px; /* Padding for the div */
-            text-align: center; /* Center the text */
-            font-size: 16px; /* Font size */
-        }
-
 
     </style>
     <title>SmokingPuddle58's Site</title>
@@ -66,11 +37,11 @@ openmoji.org
 
 
 <main>
-    <div style="font-family: 'Huiwen','serif';">
+    <div style="font-family: 'JetBrainsMono','serif';">
         <Menu></Menu>
-        <BArrow></BArrow>
+        <ArrowBouncing></ArrowBouncing>
+        <AvatarMain></AvatarMain>
+
     </div>
-
-
 </main>
 </html>
