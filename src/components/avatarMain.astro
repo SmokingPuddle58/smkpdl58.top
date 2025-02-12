@@ -5,19 +5,12 @@ import localAvatar from '../images/avatar.png'
 ---
 <style>
     .container {
-        position: relative;
     }
     .image {
         width: 100px;
         height: 100px;
-    }
-    hr {
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 3px solid #ccc;
-        margin: 1em 0;
-        padding: 0;
+        display: grid;
+        place-items: center;
     }
 
 </style>
@@ -25,7 +18,10 @@ import localAvatar from '../images/avatar.png'
 <div class="container">
     <Image src={localAvatar} alt="SmokingPuddle58's Avatar." class="image"/>
     <div style="">
-        <hr />
+        SmokingPuddle58
+    </div>
+    <div style="">
+        a.k.a. Zhang Zhe (張哲)
     </div>
 </div>
 
