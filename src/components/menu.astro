@@ -6,19 +6,17 @@
         position: fixed; /* Fixes the div in place */
         top: 0; /* Aligns it to the top */
         right: 0; /* Aligns it to the right */
-        padding: 10px; /* Optional padding */
+        padding: 0.625rem; /* Optional padding */
         display: flex;
         flex-direction: column; /* Stacks items vertically */
-        gap: 10px; /* Adds space between items */
+        gap: 0.625rem; /* Adds space between items */
         z-index: 100;
-
     }
 
     .menu-item {
         text-decoration: none; /* Removes underline from links */
         color: black; /* Text color */
-        padding: 5px; /* Padding for each item */
-        transition: background-color 0.3s; /* Smooth background change */
+        padding: 0.3125rem; /* Padding for each item */
         background-color: rgba(0, 0, 0, 0);
         font-size: large;
         text-align: right;
@@ -26,30 +24,48 @@
     }
 
     .menu-item:hover {
+        color: white;
 
+        background-color: rgba(211, 211, 211, 0.5);
     }
 
     .selected {
-        font-size: xx-large;
-        background-color: lightgray; /* Change background on hover */
-        transition: background-color 0.3s;Food
+        font-weight: bold;
     }
 
-    @media (max-width: 800px) {
-        .menu-item:not(.selected) {
+    .mobile {
+        display: none;
+    }
+
+
+    @media (max-width: 600px) {
+        .menu-item:not(.mobile) {
             display: none;
+        }
+
+        .mobile {
+            display: block;
         }
     }
 </style>
 
 <div class="fixed-div">
-    <a href="#" class="menu-item selected">Home</a>
-    <a href="#" class="menu-item ">About</a>
+    <a href="#" class="mobile menu-item ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-linecap="round" stroke-linejoin="round" width="30" height="30" stroke-width="3">
+            <path d="M4 6l16 0"></path>
+            <path d="M4 12l16 0"></path>
+            <path d="M4 18l16 0"></path>
+        </svg>
+    </a>
+    <a href="#" class="menu-item ">Home</a>
+    <a href="#" class="menu-item selected">About</a>
     <a href="#" class="menu-item ">Project</a>
     <a href="#" class="menu-item ">Blogs</a>
     <a href="#" class="menu-item ">Find Me!</a>
     <a href="#" class="menu-item ">中 / En</a>
-    <a href="#" class="menu-item " style="display: block">
+
+    <a href="#" class="menu-item " style="bottom: 0; top: ">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"
              class="icon icon-tabler icons-tabler-filled icon-tabler-square-chevrons-up">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
