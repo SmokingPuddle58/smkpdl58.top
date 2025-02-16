@@ -1,8 +1,6 @@
 ---
-function displayMenu() {
-
-}
 ---
+
 <style>
     .fixed-div {
         position: fixed; /* Fixes the div in place */
@@ -13,7 +11,13 @@ function displayMenu() {
         flex-direction: column; /* Stacks items vertically */
         gap: 0.625rem; /* Adds space between items */
         z-index: 100;
+
     }
+
+    .fixed-div.expanded {
+        background-color: greenyellow;
+    }
+
 
     .menu-item {
         text-decoration: none; /* Removes underline from links */
@@ -60,13 +64,14 @@ function displayMenu() {
         }
     }
 
-    .nav-links ~ .expanded{
+    .nav-links ~ .expanded {
         display: block;
     }
 
 
+
 </style>
-<div class="fixed-div">
+<div class="fixed-div nav-links">
     <a href="#" class="mobile menu-item hamburger">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-linecap="round" stroke-linejoin="round" width="30" height="30" stroke-width="3">
@@ -75,8 +80,8 @@ function displayMenu() {
             <path d="M4 18l16 0"></path>
         </svg>
     </a>
-    <div class="bgRectangle menu-item"></div>
-    <a href="#" class="menu-item nav-links expanded">Home</a>
+    <a href="#" class="menu-item nav-links"></a>
+    <a href="#" class="menu-item nav-links">Home</a>
     <a href="#" class="menu-item nav-links">About</a>
     <a href="#" class="menu-item nav-links">Project</a>
     <a href="#" class="menu-item nav-links">Blogs</a>
