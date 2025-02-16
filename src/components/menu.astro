@@ -1,5 +1,7 @@
 ---
+function displayMenu() {
 
+}
 ---
 <style>
     .fixed-div {
@@ -47,10 +49,25 @@
             display: block;
         }
     }
-</style>
 
+    // 動畫
+    @keyframes reveal {
+        from {
+            transform: translateY(200%);
+        }
+        to {
+            transform: translateY(0%);
+        }
+    }
+
+    .nav-links ~ .expanded{
+        display: block;
+    }
+
+
+</style>
 <div class="fixed-div">
-    <a href="#" class="mobile menu-item ">
+    <a href="#" class="mobile menu-item hamburger">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-linecap="round" stroke-linejoin="round" width="30" height="30" stroke-width="3">
             <path d="M4 6l16 0"></path>
@@ -58,14 +75,14 @@
             <path d="M4 18l16 0"></path>
         </svg>
     </a>
-    <a href="#" class="menu-item ">Home</a>
-    <a href="#" class="menu-item selected">About</a>
-    <a href="#" class="menu-item ">Project</a>
-    <a href="#" class="menu-item ">Blogs</a>
-    <a href="#" class="menu-item ">Find Me!</a>
-    <a href="#" class="menu-item ">中 / En</a>
-
-    <a href="#" class="menu-item " style="bottom: 0; top: ">
+    <div class="bgRectangle menu-item"></div>
+    <a href="#" class="menu-item nav-links expanded">Home</a>
+    <a href="#" class="menu-item nav-links">About</a>
+    <a href="#" class="menu-item nav-links">Project</a>
+    <a href="#" class="menu-item nav-links">Blogs</a>
+    <a href="#" class="menu-item nav-links">Find Me!</a>
+    <a href="#" class="menu-item nav-links">中 / En</a>
+    <a href="#" class="menu-item back">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"
              class="icon icon-tabler icons-tabler-filled icon-tabler-square-chevrons-up">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -73,3 +90,12 @@
         </svg>
     </a>
 </div>
+
+<script>
+    document.querySelector('.hamburger')?.addEventListener('click', () => {
+        let navLink = document.querySelectorAll('.nav-links');
+        for (let i = 0; i < navLink.length; i++) {
+            navLink[i].classList.toggle('expanded');
+        }
+    });
+</script>
