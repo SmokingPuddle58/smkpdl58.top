@@ -1,5 +1,7 @@
 ---
+
 ---
+
 
 <style>
     .fixed-div {
@@ -14,7 +16,8 @@
     }
 
     .fixed-div.expanded {
-        background-color: greenyellow;
+        background-color: rgba(255, 255, 255, 0.75);
+
     }
 
 
@@ -69,8 +72,9 @@
 
 
 </style>
+
 <div class="fixed-div nav-links">
-    <a href="#" class="mobile menu-item hamburger">
+    <a onclick="{toggleMenu()}" class="mobile menu-item hamburger">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-linecap="round" stroke-linejoin="round" width="30" height="30" stroke-width="3">
             <path d="M4 6l16 0"></path>
@@ -78,13 +82,13 @@
             <path d="M4 18l16 0"></path>
         </svg>
     </a>
-    <a href="#" class="menu-item nav-links" style="display: none"></a>
-    <a href="#" class="menu-item nav-links">Home</a>
-    <a href="#" class="menu-item nav-links">About</a>
-    <a href="#" class="menu-item nav-links">Project</a>
-    <a href="#" class="menu-item nav-links">Blogs</a>
-    <a href="#" class="menu-item nav-links">Find Me!</a>
-    <a href="#" class="menu-item nav-links">中 / En</a>
+    <a href="#" class="menu-item nav-links idvItem" style="display: none"></a>
+    <a href="#Home" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">Home</a>
+    <a href="#About" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">About</a>
+    <a href="#Project" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">Project</a>
+    <a href="#Blogs" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">Blogs</a>
+    <a href="#Contact" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">Find Me!</a>
+    <a href="#" onclick="{toggleMenu()}" class="menu-item nav-links idvItem">中 / En</a>
     <a href="#" class="menu-item back">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"
              class="icon icon-tabler icons-tabler-filled icon-tabler-square-chevrons-up">
@@ -94,11 +98,18 @@
     </a>
 </div>
 
-<script>
-    document.querySelector('.hamburger')?.addEventListener('click', () => {
+<script is:inline>
+    function toggleMenu() {
+        // Check if the page is a mobile website. If yes then do not hide the menu.
+        if (!window.matchMedia("(max-width: 600px)").matches) {
+            return false;
+        }
+        // Select all the menu items.
         let navLink = document.querySelectorAll('.nav-links');
         for (let i = 0; i < navLink.length; i++) {
             navLink[i].classList.toggle('expanded');
         }
-    });
+        return true;
+    }
 </script>
+
