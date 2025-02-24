@@ -1,7 +1,6 @@
 ---
 // 5 Colors for the background, from lightest to darkest.
 const bgSelection = ['#e0e1dd', '#778da9', '#415a77', '#1b263b', '#0d1b2a'];
-let selectedIndex = bgSelection[0];
 
 import Menu from '../components/menu.astro';
 ---
@@ -16,7 +15,7 @@ openmoji.org
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="src/images/favicon.png"/>
 
-    <style define:vars={{selectedIndex}}>
+    <style>
         html {
             scroll-behavior: smooth;
         }
@@ -46,7 +45,7 @@ openmoji.org
         #hi {
             font-size: 96px;
             text-decoration: underline dotted red;
-            -webkit-text-decoration-style: dotted;
+            -webkit-text-decoration-line: dotted;
             -webkit-text-decoration-color: red;
         }
 
